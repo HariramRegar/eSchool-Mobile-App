@@ -1,22 +1,33 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
+
+import React from 'react'
+
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {Main,Home,Blank,Results} from '../screens/index';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeBottomTabNavigator from './homeBottomTabNavigator';
+import Blank from '../screens/Blank';
+import Home from '../screens/Home';
+import Notifications from '../screens/Notifications';
+import Stats from '../screens/Stats';
+import Results from '../screens/Results';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
-function Navigator() {
+const RootNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="main" component={Main} />
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="home" component={Home} />
         <Stack.Screen name="blank" component={Blank} />
-        <Stack.Screen name="results" component={Results} />
+        <Stack.Screen name='notifications' component={Notifications} />
+        <Stack.Screen name='stats' component={Stats} />
+        <Stack.Screen name='results' component={Results} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
-export default Navigator;
+export default RootNavigation;

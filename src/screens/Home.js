@@ -1,10 +1,30 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Button } from "react-native";
 
-const Courses = () => {
+const Courses = ({navigation}) => {
   return (
     <View style={styles.header}>
       <Text style={styles.welcome}>Home</Text>
+      <Button
+        title="Go to Home"
+        onPress={() => navigation.push('home')}
+      />
+      <Button
+        title="Go to Notofications"
+        onPress={() => navigation.push('notifications')}
+      />
+      <Button
+        title="Go to Blank"
+        onPress={() => navigation.push('blank')}
+      />
+      <Button
+        title="Go to Stats"
+        onPress={() => navigation.push('stats')}
+      />
+      <Button
+        title="Go to Results"
+        onPress={() => navigation.push('results')}
+      />
     </View>
   );
 };
