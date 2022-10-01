@@ -22,7 +22,7 @@ const RootNavigation = () => {
         }}
       >
         <Stack.Screen name="loginoptions" component={LoginOptions} options={{ title: 'Welcome', headerShown: false }} />
-        <Stack.Screen name="home" component={Home} options={{ title: 'Home' }} />
+        <Stack.Screen name="home" component={Home} options={{ title: 'Home', headerShown: false }} />
         <Stack.Screen name="blank" component={Blank} options={{ title: 'Blank' }} />
         <Stack.Screen name='notifications' component={Notifications} options={{ title: 'Notifications' }} />
         <Stack.Screen name='stats' component={Stats} options={{ title: 'Stats' }} />
