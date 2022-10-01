@@ -17,7 +17,7 @@ const LoginOptions = ({ navigation }) => {
                     <Image style={styles.optionimage} source={require("../assets/StudentMale.png")} />
                     <Button style={styles.button}
                         title="Student"
-                        onPress={() => navigation.push('login')}
+                        onPress={() => navigation.push('signup')}
                     />
                 </View>
                 <View style={styles.option}>

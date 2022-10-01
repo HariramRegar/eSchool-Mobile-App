@@ -10,6 +10,7 @@ import Stats from '../screens/Stats';
 import Results from '../screens/Results';
 import LoginOptions from '../screens/LoginOptions';
 import Login from '../screens/Login';
+import SignUp from '../screens/SignUp';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ const RootNavigation = () => {
         <Stack.Screen name='stats' component={Stats} options={{ title: 'Stats' }} />
         <Stack.Screen name='results' component={Results} options={{ title: 'Results' }} />
         <Stack.Screen name='login' component={Login} options={{ title: 'Login' }} />
+        <Stack.Screen name='signup' component={SignUp} options={{ title: 'SignUp' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
