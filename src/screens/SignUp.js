@@ -18,7 +18,7 @@ export default function SignUp({ navigation }) {
             <View style={styles.circle}>
                 <Image style={styles.imagelogo} source={require("../assets/mylogo.png")} />
             </View>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.container}>
                     <Text style={styles.inputName}>Full Name</Text>
                     <TextInput

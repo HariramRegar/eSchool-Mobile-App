@@ -1,98 +1,95 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React from 'react'
 import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  Button,
-  TouchableOpacity,
-} from "react-native";
- 
-export default function Login({navigation}) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
- 
-  return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/mylogo.png")} />
- 
-      <StatusBar style="auto" />
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Email."
-          placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
-        />
-      </View>
- 
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="Password."
-          placeholderTextColor="#003f5c"
-          secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
-        />
-      </View>
- 
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
-      </TouchableOpacity>
- 
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText} onPress={() => navigation.push('home')}>LOGIN</Text>
-      </TouchableOpacity>
-    </View>
-  );
+    View,
+    Button,
+    TextInput,
+    StyleSheet,
+    Text,
+    Image,
+    ScrollView
+} from 'react-native'
+
+
+export default function SignUp({ navigation }) {
+    return (
+        <>
+            <Image style={styles.image} source={require("../assets/mycurve.png")} resizeMode='stretch' />
+
+            <View style={styles.circle}>
+                <Image style={styles.imagelogo} source={require("../assets/mylogo.png")} />
+            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.container}>
+                    <Text style={styles.inputName}>Email</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder='Email address'
+                        secureTextEntry={true}
+                        autoCapitalize="none"
+                        placeholderTextColor='pink'
+                        onChangeText={val => this.onChangeText('password', val)}
+                    />
+                    <Text style={styles.inputName}>Password</Text>
+                    <TextInput
+                        style={styles.input}
+                        placeholder='Password'
+                        autoCapitalize="none"
+                        placeholderTextColor='pink'
+                        onChangeText={val => this.onChangeText('password', val)}
+                    />
+                    <Button
+                        title='Log In'
+                        onPress={() => navigation.push('home')}
+                    />
+                </View>
+            </ScrollView>
+        </>
+    )
 }
- 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
- 
-  image: {
-    marginBottom: 40,
-    width: 120,
-    height: 120,
-    borderRadius:10
-  },
- 
-  inputView: {
-    backgroundColor: "#FFC0CB",
-    borderRadius: 10,
-    width: "80%",
-    height: 45,
-    marginBottom: 20,
- 
-    alignItems: "center",
-  },
- 
-  TextInput: {
-    height: 50,
-    flex: 1,
-    padding: 10,
-    marginLeft: 20,
-  },
- 
-  forgot_button: {
-    height: 30,
-    marginBottom: 30,
-  },
- 
-  loginBtn: {
-    width: "60%",
-    borderRadius: 10,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#FF1493",
-  },
-});
+    input: {
+        width: 350,
+        height: 45,
+        backgroundColor: 'white',
+        margin: 10,
+        padding: 8,
+        color: 'black',
+        borderRadius: 14,
+        fontSize: 18,
+        fontWeight: '500',
+    },
+    container: {
+        marginTop: 20,
+        flex: 1,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        marginBottom: 20
+    },
+    inputName: {
+        marginLeft: 30,
+        color: '#2b94c2',
+        fontSize: 15,
+        alignSelf: 'flex-start'
+    },
+    image: {
+        width: "100%",
+        height: 120,
+    },
+    imagelogo: {
+        width: 100,
+        height: 100,
+        borderRadius: 100 / 2,
+        borderColor: '#c2652b',
+        borderWidth: 5,
+    },
+    circle: {
+        width: 100,
+        height: 100,
+        borderRadius: 100 / 2,
+        backgroundColor: "pink",
+        marginTop: -60,
+        alignSelf: 'center',
+        marginBottom: 20
+    },
+})
