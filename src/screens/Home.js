@@ -1,9 +1,9 @@
 import React from "react";
-import { View, StyleSheet, Text, Button, Image } from "react-native";
+import { View, StyleSheet, Text, Button, Image, ScrollView } from "react-native";
 
 const Courses = ({ navigation }) => {
   return (
-    <View>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <Image style={styles.image} source={require("../assets/mycurve.png")} resizeMode='stretch' />
 
       <View style={styles.circle}>
@@ -71,7 +71,8 @@ const Courses = ({ navigation }) => {
           />
         </View>
       </View>
-    </View>
+    </ScrollView>
+
   );
 };
 
@@ -85,7 +86,8 @@ const styles = StyleSheet.create({
     borderRadius: 150 / 2,
     backgroundColor: "pink",
     marginTop: -90,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginBottom: 10
   },
   image: {
     width: "100%",
